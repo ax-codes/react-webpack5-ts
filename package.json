@@ -6,7 +6,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack serve --config webpack/webpack.dev.js",
     "build:test": "cross-env NODE_ENV=test webpack --config webpack/webpack.dev.js",
-    "build:prod": "cross-env NODE_ENV=prod webpack --config webpack/webpack.prod.js"
+    "build:prod": "cross-env NODE_ENV=prod webpack --config webpack/webpack.prod.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": "https://github.com/ax-codes/react-webpack5-ts.git",
   "author": "xing.guo <xing.guo@vixtel.com>",
@@ -20,6 +22,14 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@babel/runtime-corejs3": "^7.20.13",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
@@ -37,6 +47,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.10",
     "html-webpack-plugin": "^5.5.0",
     "less": "^4.1.3",
     "less-loader": "^11.1.0",
@@ -58,36 +69,37 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "antd": "^5.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "browserslist": {
     "development": [
-        "last 1 chrome version",
-        "last 1 firefox version",
-        "last 1 safari version"
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ],
     "production": [
-        "ie > 6",
-        ">1%",
-        "not dead",
-        "not op_mini all"
+      "ie > 6",
+      ">1%",
+      "not dead",
+      "not op_mini all"
     ]
   },
   "lint-staged": {
-      "*.{ts,tsx}": [
-          "yarn run lint",
-          "git add --force"
-      ],
-      "*.{md,json}": [
-          "git add --force"
-      ]
+    "*.{ts,tsx}": [
+      "yarn run lint",
+      "git add --force"
+    ],
+    "*.{md,json}": [
+      "git add --force"
+    ]
   },
   "engines": {
-      "npm": ">=6.14.6",
-      "node": ">=12.18.4"
+    "npm": ">=6.14.6",
+    "node": ">=12.18.4"
   },
   "peerDependencies": {
-      "eslint-config-airbnb-base": "^14.2.1"
+    "eslint-config-airbnb-base": "^14.2.1"
   }
 }
